@@ -25,14 +25,22 @@ def get_sales_data():
     """
     Get sales figures
     """
-    print("Please enter the sales data ")
-    print("Data shoud be six numbers, separetad by commas.")
-    print("Examples: 10,20,30,40,50,60\n")
+    while True:
+        
+        print("Please enter the sales data ")
+        print("Data shoud be six numbers, separetad by commas.")
+        print("Examples: 10,20,30,40,50,60\n")
+        
+        data_str = input("enter your data here ")
     
-    data_str = input("enter your data here ")
-   
-    sales_data = data_str.split(",")
-    validte_data(sales_data)
+        sales_data = data_str.split(",")
+        
+        
+        if validte_data(sales_data):
+            print("data is validdddd")
+            break
+    
+    return sales_data    
     
 def validte_data(values):
     """
@@ -48,10 +56,14 @@ def validte_data(values):
                 f"Exacly 6 values required, you provided{len(values)}"
             )
     except ValueError as e:
-        print(f"invalid data: {e}, please try again .")        
+        print(f"invalid data: {e}, please try again .\n")
+        return False
+        
+    return True        
     
         
     
-get_sales_data()    
+data= get_sales_data()    
+    
     
 
