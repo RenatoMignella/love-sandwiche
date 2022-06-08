@@ -1,7 +1,7 @@
 # Your code goes here.
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
-from pprint import pprint
+
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -35,7 +35,7 @@ def get_sales_data():
         print("Data shoud be six numbers, separetad by commas.")
         print("Examples: 10,20,30,40,50,60\n")
         
-        data_str = input("enter your data here ")
+        data_str = input("enter your data here:\n ")
     
         sales_data = data_str.split(",")
         
